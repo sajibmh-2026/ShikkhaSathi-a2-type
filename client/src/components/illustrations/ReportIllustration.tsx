@@ -7,23 +7,23 @@ export default function ReportIllustration() {
   ]
 
   return (
-    <svg viewBox="0 0 116 76" fill="none" style={{ width: '100%', height: 'auto' }} aria-hidden="true">
-      <rect width="116" height="76" rx="8" fill="#FFF0E6" />
+    <svg viewBox="0 0 128 84" fill="none" style={{ width: '100%', height: 'auto' }} overflow="hidden" aria-hidden="true">
+      <rect width="128" height="84" rx="8" fill="#FFF0E6" />
       {/* Card */}
-      <rect x="10" y="12" width="96" height="54" rx="5" fill="white" stroke="#FFD4B8" strokeWidth="1.5" />
+      <rect x="10" y="12" width="108" height="60" rx="5" fill="white" stroke="#FFD4B8" strokeWidth="1.5" />
       {/* Title */}
-      <text x="18" y="26" fontFamily="'Poppins',sans-serif" fontSize="7.5" fill="#FF8B5A" fontWeight="700">
+      <text x="18" y="28" fontFamily="'Poppins',sans-serif" fontSize="8" fill="#FF8B5A" fontWeight="700">
         Progress Report
       </text>
       {/* Rows */}
       {rows.map(({ label, pct, color }, i) => (
         <g key={label}>
-          <text x="18" y={39 + i * 14} fontFamily="'Inter',sans-serif" fontSize="7" fill="#718096">
+          <text x="18" y={42 + i * 16} fontFamily="'Inter',sans-serif" fontSize="7.5" fill="#718096">
             {label}
           </text>
-          <rect x="46" y={32 + i * 14} width="54" height="6" rx="3" fill="#F0F0F0" />
-          <rect x="46" y={32 + i * 14} width={54 * pct / 100} height="6" rx="3" fill={color} />
-          <text x="104" y={39 + i * 14} fontFamily="'Inter',sans-serif" fontSize="7" fill={color} fontWeight="600" textAnchor="end">
+          <rect x="52" y={35 + i * 16} width="60" height="7" rx="3.5" fill="#F0F0F0" />
+          <rect x="52" y={35 + i * 16} width={60 * pct / 100} height="7" rx="3.5" fill={color} />
+          <text x="116" y={42 + i * 16} fontFamily="'Inter',sans-serif" fontSize="7.5" fill={color} fontWeight="600" textAnchor="end">
             {pct}%
           </text>
         </g>
