@@ -2,16 +2,23 @@
 // 4-column footer: Brand, Quick Links, For Teachers, Contact Us
 // Responsive: 4col (≥1000px) → 2col (≥641px) → 1col (mobile)
 
+import { Link } from 'react-router-dom'
+
 // ── Data ─────────────────────────────────────────────────────────────────────
 
-const QUICK_LINKS = ['Home', 'Features', 'Pricing', 'About Us', 'Contact']
+const QUICK_LINKS = [
+  { label: 'Home', path: '/' },
+  { label: 'Features', path: '/features' },
+  { label: 'About Us', path: '/about' },
+  { label: 'Contact', path: '/contact' },
+]
 
 const TEACHER_LINKS = [
-  'Lesson Planner',
-  'Worksheet Generator',
-  'Exam Builder',
-  'Progress Reports',
-  'Resource Library',
+  { label: 'Lesson Planner', path: '#' },
+  { label: 'Worksheet Generator', path: '#' },
+  { label: 'Exam Builder', path: '#' },
+  { label: 'Progress Reports', path: '#' },
+  { label: 'Resource Library', path: '#' },
 ]
 
 const CONTACT_ITEMS = [
@@ -94,7 +101,7 @@ function FooterLinkColumn({
   links,
 }: {
   title: string
-  links: string[]
+  links: { label: string; path: string }[]
 }) {
   return (
     <div>
@@ -104,10 +111,10 @@ function FooterLinkColumn({
       >
         {title}
       </h4>
-      {links.map((link) => (
-        <a
-          key={link}
-          href="#"
+      {links.map(({ label, path }) => (
+        <Link
+          key={label}
+          to={path}
           className="block hover:text-sky transition-colors"
           style={{
             fontSize: 13,
@@ -116,8 +123,8 @@ function FooterLinkColumn({
             textDecoration: 'none',
           }}
         >
-          {link}
-        </a>
+          {label}
+        </Link>
       ))}
     </div>
   )

@@ -1,30 +1,21 @@
+import { Routes, Route } from 'react-router-dom'
 import Navbar from '@/components/layout/Navbar'
-import HeroSection from '@/components/sections/HeroSection'
-import ChallengesSection from '@/components/sections/ChallengesSection'
-import FeaturesSection from '@/components/sections/FeaturesSection'
-import HowItWorksSection from '@/components/sections/HowItWorksSection'
-import DashboardPreviewSection from '@/components/sections/DashboardPreviewSection'
-import StatsSection from '@/components/sections/StatsSection'
-import TestimonialsSection from '@/components/sections/TestimonialsSection'
-import FaqSection from '@/components/sections/FaqSection'
-import CtaSection from '@/components/sections/CtaSection'
 import Footer from '@/components/layout/Footer'
+import LandingPage from '@/pages/LandingPage'
+import FeaturesPage from '@/pages/FeaturesPage'
+import AboutPage from '@/pages/AboutPage'
+import ContactPage from '@/pages/ContactPage'
 
 function App() {
   return (
     <div className="min-h-screen bg-bg font-inter text-text overflow-x-hidden">
       <Navbar />
-      <main>
-        <HeroSection />
-        <ChallengesSection />
-        <FeaturesSection />
-        <HowItWorksSection />
-        <DashboardPreviewSection />
-        <StatsSection />
-        <TestimonialsSection />
-        <FaqSection />
-        <CtaSection />
-      </main>
+      <Routes>
+        <Route path="/" element={<LandingPage />} />
+        <Route path="/features" element={<FeaturesPage />} />
+        <Route path="/about" element={<AboutPage />} />
+        <Route path="/contact" element={<ContactPage />} />
+      </Routes>
       <Footer />
     </div>
   )

@@ -1,16 +1,22 @@
 import { useState, useEffect, useCallback } from 'react'
+import { Link } from 'react-router-dom'
 import { Menu, X } from 'lucide-react'
 import { cn } from '@/utils/cn'
 
 // ── Constants ────────────────────────────────────────────────────────────────
 
-const NAV_LINKS = ['Home', 'Features', 'About', 'Contact'] as const
+const NAV_LINKS = [
+  { label: 'Home', path: '/' },
+  { label: 'Features', path: '/features' },
+  { label: 'About', path: '/about' },
+  { label: 'Contact', path: '/contact' },
+] as const
 
 // ── Logo Component ───────────────────────────────────────────────────────────
 
 function Logo() {
   return (
-    <a href="/" className="flex items-center gap-2.5 group" aria-label="ShikkhaSathi AI Home">
+    <Link to="/" className="flex items-center gap-2.5 group" aria-label="ShikkhaSathi AI Home">
       {/* Owl icon container */}
       <div
         className="flex items-center justify-center text-xl"
@@ -39,7 +45,7 @@ function Logo() {
           AI
         </span>
       </div>
-    </a>
+    </Link>
   )
 }
 
@@ -94,15 +100,15 @@ export default function Navbar() {
 
         {/* ── Desktop Nav Links ── */}
         <div className="hidden md:flex items-center gap-8">
-          {NAV_LINKS.map((link) => (
-            <a
-              key={link}
-              href={`#${link.toLowerCase()}`}
+          {NAV_LINKS.map(({ label, path }) => (
+            <Link
+              key={label}
+              to={path}
               className="font-medium text-text-mid transition-colors duration-200 hover:text-sky no-underline"
               style={{ fontSize: 14 }}
             >
-              {link}
-            </a>
+              {label}
+            </Link>
           ))}
         </div>
 
@@ -191,10 +197,10 @@ export default function Navbar() {
         >
           {/* Nav links */}
           <div className="flex flex-col px-4 pt-6 gap-1">
-            {NAV_LINKS.map((link, i) => (
-              <a
-                key={link}
-                href={`#${link.toLowerCase()}`}
+            {NAV_LINKS.map(({ label, path }, i) => (
+              <Link
+                key={label}
+                to={path}
                 className="font-medium text-text-mid no-underline transition-colors duration-200 hover:text-sky hover:bg-sky-light"
                 style={{
                   fontSize: 15,
@@ -204,8 +210,8 @@ export default function Navbar() {
                 }}
                 onClick={() => setMobileOpen(false)}
               >
-                {link}
-              </a>
+                {label}
+              </Link>
             ))}
           </div>
 
