@@ -55,7 +55,9 @@ export default function FeatureCard({
           {icon}
         </div>
         {/* Mini illustration */}
-        {illustration}
+        <div style={{ width: 116, flexShrink: 0 }}>
+          {illustration}
+        </div>
       </div>
 
       {/* ── Body: text + button ── */}

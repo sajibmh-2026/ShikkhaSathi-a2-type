@@ -7,7 +7,7 @@ export default function ReportIllustration() {
   ]
 
   return (
-    <svg viewBox="0 0 116 76" fill="none" style={{ width: 116, height: 76 }} aria-hidden="true">
+    <svg viewBox="0 0 116 76" fill="none" style={{ width: '100%', height: 'auto' }} aria-hidden="true">
       <rect width="116" height="76" rx="8" fill="#FFF0E6" />
       {/* Card */}
       <rect x="10" y="12" width="96" height="54" rx="5" fill="white" stroke="#FFD4B8" strokeWidth="1.5" />

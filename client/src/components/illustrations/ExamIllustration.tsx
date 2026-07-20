@@ -1,7 +1,7 @@
 /** Exam illustration — test paper with questions */
 export default function ExamIllustration() {
   return (
-    <svg viewBox="0 0 116 76" fill="none" style={{ width: 116, height: 76 }} aria-hidden="true">
+    <svg viewBox="0 0 116 76" fill="none" style={{ width: '100%', height: 'auto' }} aria-hidden="true">
       <rect width="116" height="76" rx="8" fill="#FFF8E0" />
       {/* Paper */}
       <rect x="14" y="8" width="88" height="60" rx="5" fill="white" stroke="#FFE680" strokeWidth="1.5" />

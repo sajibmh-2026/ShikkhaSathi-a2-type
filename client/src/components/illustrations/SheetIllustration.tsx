@@ -1,7 +1,7 @@
 /** Worksheet illustration — stacked documents with checkmark */
 export default function SheetIllustration() {
   return (
-    <svg viewBox="0 0 116 76" fill="none" style={{ width: 116, height: 76 }} aria-hidden="true">
+    <svg viewBox="0 0 116 76" fill="none" style={{ width: '100%', height: 'auto' }} aria-hidden="true">
       <rect width="116" height="76" rx="8" fill="#E8F8EF" />
       {/* Back document */}
       <rect x="56" y="18" width="36" height="48" rx="4" fill="white" stroke="#C8ECD8" strokeWidth="1.5" opacity="0.75" />
