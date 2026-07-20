@@ -108,8 +108,8 @@ function FeatureBlock({
               display: 'flex',
               alignItems: 'center',
               justifyContent: 'center',
-              maxWidth: 480,
-              margin: isReversed ? '0 0 0 auto' : '0',
+              maxWidth: 360,
+              margin: isReversed ? '0 0 0 auto' : '0 auto',
             }}
           >
             {feature.illustration}
