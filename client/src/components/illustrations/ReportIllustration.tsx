@@ -7,7 +7,7 @@ export default function ReportIllustration() {
   ]
 
   return (
-    <svg viewBox="0 0 128 84" fill="none" style={{ width: '100%', height: 'auto' }} overflow="hidden" aria-hidden="true">
+    <svg viewBox="0 0 128 84" fill="none" style={{ width: '100%', maxWidth: 300, height: 'auto' }} overflow="hidden" aria-hidden="true">
       <rect width="128" height="84" rx="8" fill="#FFF0E6" />
       {/* Card */}
       <rect x="10" y="12" width="108" height="60" rx="5" fill="white" stroke="#FFD4B8" strokeWidth="1.5" />
@@ -21,9 +21,9 @@ export default function ReportIllustration() {
           <text x="18" y={42 + i * 16} fontFamily="'Inter',sans-serif" fontSize="7.5" fill="#718096">
             {label}
           </text>
-          <rect x="52" y={35 + i * 16} width="60" height="7" rx="3.5" fill="#F0F0F0" />
-          <rect x="52" y={35 + i * 16} width={60 * pct / 100} height="7" rx="3.5" fill={color} />
-          <text x="116" y={42 + i * 16} fontFamily="'Inter',sans-serif" fontSize="7.5" fill={color} fontWeight="600" textAnchor="end">
+          <rect x="52" y={35 + i * 16} width="56" height="7" rx="3.5" fill="#F0F0F0" />
+          <rect x="52" y={35 + i * 16} width={56 * pct / 100} height="7" rx="3.5" fill={color} />
+          <text x="112" y={42 + i * 16} fontFamily="'Inter',sans-serif" fontSize="7.5" fill={color} fontWeight="600" textAnchor="end">
             {pct}%
           </text>
         </g>

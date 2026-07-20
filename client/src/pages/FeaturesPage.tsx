@@ -104,12 +104,10 @@ function FeatureBlock({
             style={{
               background: feature.bg,
               borderRadius: 16,
-              padding: '32px 28px',
+              padding: 32,
               display: 'flex',
               alignItems: 'center',
               justifyContent: 'center',
-              maxWidth: 360,
-              margin: isReversed ? '0 0 0 auto' : '0 auto',
             }}
           >
             {feature.illustration}

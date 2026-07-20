@@ -1,7 +1,7 @@
 /** Lesson plan illustration — document with AI arrow */
 export default function LessonIllustration() {
   return (
-    <svg viewBox="0 0 116 76" fill="none" style={{ width: '100%', height: 'auto' }} overflow="hidden" aria-hidden="true">
+    <svg viewBox="0 0 116 76" fill="none" style={{ width: '100%', maxWidth: 300, height: 'auto' }} overflow="hidden" aria-hidden="true">
       <rect width="116" height="76" rx="8" fill="#EEF9FF" />
       {/* Document */}
       <rect x="8" y="12" width="44" height="54" rx="4" fill="white" stroke="#C8E0F0" strokeWidth="1.5" />
