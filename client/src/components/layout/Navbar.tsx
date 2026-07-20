@@ -114,9 +114,9 @@ export default function Navbar() {
 
         {/* ── Desktop CTAs ── */}
         <div className="hidden md:flex items-center gap-3">
-          <button
-            type="button"
-            className="font-poppins font-semibold text-sky transition-all duration-200 hover:-translate-y-0.5 hover:brightness-110 cursor-pointer"
+          <Link
+            to="/login"
+            className="font-poppins font-semibold text-sky transition-all duration-200 hover:-translate-y-0.5 hover:brightness-110 no-underline"
             style={{
               fontSize: 14,
               padding: '9px 20px',
@@ -126,10 +126,10 @@ export default function Navbar() {
             }}
           >
             Login
-          </button>
-          <button
-            type="button"
-            className="font-poppins font-semibold text-white transition-all duration-200 hover:-translate-y-0.5 hover:brightness-110 cursor-pointer"
+          </Link>
+          <Link
+            to="/register"
+            className="font-poppins font-semibold text-white transition-all duration-200 hover:-translate-y-0.5 hover:brightness-110 no-underline"
             style={{
               fontSize: 14,
               padding: '10px 22px',
@@ -140,7 +140,7 @@ export default function Navbar() {
             }}
           >
             Get Started
-          </button>
+          </Link>
         </div>
 
         {/* ── Mobile Menu Toggle ── */}
@@ -220,9 +220,9 @@ export default function Navbar() {
 
           {/* CTAs */}
           <div className="flex flex-col px-4 gap-3">
-            <button
-              type="button"
-              className="w-full font-poppins font-semibold text-sky cursor-pointer transition-all duration-200 hover:brightness-110"
+            <Link
+              to="/login"
+              className="w-full text-center font-poppins font-semibold text-sky no-underline transition-all duration-200 hover:brightness-110"
               style={{
                 fontSize: 15,
                 padding: '12px 20px',
@@ -233,10 +233,10 @@ export default function Navbar() {
               onClick={() => setMobileOpen(false)}
             >
               Login
-            </button>
-            <button
-              type="button"
-              className="w-full font-poppins font-semibold text-white cursor-pointer transition-all duration-200 hover:-translate-y-0.5 hover:brightness-110"
+            </Link>
+            <Link
+              to="/register"
+              className="w-full text-center font-poppins font-semibold text-white no-underline transition-all duration-200 hover:-translate-y-0.5 hover:brightness-110"
               style={{
                 fontSize: 15,
                 padding: '13px 22px',
@@ -248,7 +248,7 @@ export default function Navbar() {
               onClick={() => setMobileOpen(false)}
             >
               Get Started
-            </button>
+            </Link>
           </div>
         </div>
       </div>
