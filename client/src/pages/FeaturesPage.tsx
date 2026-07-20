@@ -99,7 +99,7 @@ function FeatureBlock({
         }`}
       >
         {/* Illustration side */}
-        <div className="flex-shrink-0">
+        <div className="w-full md:w-1/2 flex-shrink-0">
           <div
             style={{
               background: feature.bg,
@@ -115,9 +115,9 @@ function FeatureBlock({
         </div>
 
         {/* Content side */}
-        <div className="flex-1">
+        <div className={`w-full md:w-1/2 ${isReversed ? 'md:text-right' : ''}`}>
           {/* Icon + Title */}
-          <div className="flex items-center gap-3 mb-3">
+          <div className={`flex items-center gap-3 mb-3 ${isReversed ? 'md:justify-end' : ''}`}>
             <div
               className="flex items-center justify-center"
               style={{
@@ -148,15 +148,15 @@ function FeatureBlock({
           {/* Description */}
           <p
             className="text-text-mid mb-6"
-            style={{ fontSize: 15, lineHeight: 1.72, maxWidth: 460 }}
+            style={{ fontSize: 15, lineHeight: 1.72 }}
           >
             {feature.description}
           </p>
 
           {/* Steps */}
-          <div className="flex flex-col gap-3">
+          <div className={`flex flex-col gap-3 ${isReversed ? 'md:items-end' : ''}`}>
             {feature.steps.map((step, i) => (
-              <div key={i} className="flex items-center gap-3">
+              <div key={i} className={`flex items-center gap-3 ${isReversed ? 'md:flex-row-reverse' : ''}`}>
                 <div
                   className="flex items-center justify-center font-poppins font-bold"
                   style={{
