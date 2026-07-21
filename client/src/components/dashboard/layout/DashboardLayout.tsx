@@ -1,13 +1,22 @@
+import { useState, useEffect } from 'react'
 import { Outlet } from 'react-router-dom'
 import { useSidebar } from '@/hooks/useSidebar'
 import DashboardSidebar from './DashboardSidebar'
-import DashboardTopbar from './DashboardTopbar'
+import DashboardNavbar from '../navbar/DashboardNavbar'
 
 export default function DashboardLayout() {
   const { expanded, mobileOpen, toggleExpanded, toggleMobile, closeMobile } =
     useSidebar()
 
-  const sidebarWidth = expanded ? 260 : 72
+  const [isMobile, setIsMobile] = useState(() => window.innerWidth < 1024)
+
+  useEffect(() => {
+    const handleResize = () => setIsMobile(window.innerWidth < 1024)
+    window.addEventListener('resize', handleResize)
+    return () => window.removeEventListener('resize', handleResize)
+  }, [])
+
+  const sidebarWidth = isMobile ? 0 : expanded ? 260 : 72
 
   return (
     <div className="min-h-screen font-inter text-text" style={{ background: '#F8F5F0' }}>
@@ -19,8 +28,8 @@ export default function DashboardLayout() {
         onCloseMobile={closeMobile}
       />
 
-      {/* ── Topbar ── */}
-      <DashboardTopbar
+      {/* ── Navbar ── */}
+      <DashboardNavbar
         sidebarExpanded={expanded}
         onToggleMobile={toggleMobile}
       />
