@@ -11,6 +11,7 @@ import RegisterPage from '@/pages/RegisterPage'
 import ForgotPasswordPage from '@/pages/ForgotPasswordPage'
 import DashboardLayout from '@/components/dashboard/layout/DashboardLayout'
 import DashboardPlaceholder from '@/pages/dashboard/DashboardPlaceholder'
+import OverviewPage from '@/pages/dashboard/OverviewPage'
 
 // Auth pages that should render WITHOUT Navbar/Footer
 const AUTH_PATHS = ['/login', '/register', '/forgot-password']
@@ -46,7 +47,7 @@ function App() {
     return (
       <Routes>
         <Route path="/dashboard" element={<DashboardLayout />}>
-          <Route index element={<DashboardPlaceholder />} />
+          <Route index element={<OverviewPage />} />
           <Route path="planner" element={<DashboardPlaceholder />} />
           <Route path="worksheets" element={<DashboardPlaceholder />} />
           <Route path="exams" element={<DashboardPlaceholder />} />
